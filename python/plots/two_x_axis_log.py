@@ -6,6 +6,8 @@ y = [0,1,2,3]
 ax1.plot(x, y)
 ax1.grid(True)
 ax1.set_xlabel("AX1")
+ax1.set_xscale('log')
+
 ax2 = ax1.twiny()
 ax2.set_xticks( ax1.get_xticks() )
 ax2.set_xbound(ax1.get_xbound())
