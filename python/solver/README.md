@@ -13,7 +13,15 @@ I had to use this in the Powershell to enable the virtual enviroment:
     - Get-ExecutionPolicy -List
 
 * Virtual environment
-Create a virtual environment by: "python3 -m venv .env" or "python -m venv .env"
+Create a virtual environment by: 
+    "python3 -m venv .env" 
+    or 
+    "python -m venv .env"
+Activate by:
+    "c:/Projects/github/tools_solver/python/solver/.env/Scripts/Activate.ps1" (windows)
+    or
+    "source .env/bin/activate" (linux)
+
 
 * Dependencies
 Python dependencies for this project can be found at:
