@@ -38,6 +38,15 @@ class LinSolver():
     def set_y1(self, y1):
         self.y1 = y1
         return self.update_m_n()
+    
+    def get_y(self, x):
+        y = (self.m*x)+self.n
+        return y
+    
+    def get_x(self, y):
+        x = (y-self.n)/self.m
+        return x
+
 
 
 class Solver():
@@ -49,6 +58,8 @@ class Solver():
         self.ui.lineEdit_x1.textChanged.connect(lambda: self.update_field('x1'))
         self.ui.lineEdit_y0.textChanged.connect(lambda: self.update_field('y0'))
         self.ui.lineEdit_y1.textChanged.connect(lambda: self.update_field('y1'))
+        self.ui.lineEdit_x.textChanged.connect(lambda: self.update_field('x'))
+        self.ui.lineEdit_y.textChanged.connect(lambda: self.update_field('y'))
         self.lin_solver = LinSolver()
     
     def update_field(self, field):
@@ -75,7 +86,30 @@ class Solver():
                 self.ui.lineEdit_n.setText(str(n))
         except:
             self.ui.lineEdit_m.setText('#')
-            self.ui.lineEdit_n.setText('#')          
+            self.ui.lineEdit_n.setText('#')  
+        if field == 'x':
+            try:
+                x = float(self.ui.lineEdit_x.text())
+                y = self.lin_solver.get_y(x)
+                self.ui.lineEdit_y.blockSignals(True)
+                self.ui.lineEdit_y.setText(str(y))
+                self.ui.lineEdit_y.blockSignals(False)
+            except:
+                self.ui.lineEdit_y.blockSignals(True)
+                self.ui.lineEdit_y.setText('#')
+                self.ui.lineEdit_y.blockSignals(False)
+        elif field == 'y':
+            try:
+                y = float(self.ui.lineEdit_y.text())
+                x = self.lin_solver.get_x(y)
+                self.ui.lineEdit_x.blockSignals(True)
+                self.ui.lineEdit_x.setText(str(x))
+                self.ui.lineEdit_x.blockSignals(False)
+            except:
+                self.ui.lineEdit_x.blockSignals(True)
+                self.ui.lineEdit_x.setText('#')
+                self.ui.lineEdit_x.blockSignals(False)
+       
 
 
 if __name__ == "__main__":
