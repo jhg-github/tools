@@ -91,24 +91,22 @@ class Solver():
             try:
                 x = float(self.ui.lineEdit_x.text())
                 y = self.lin_solver.get_y(x)
-                self.ui.lineEdit_y.blockSignals(True)
-                self.ui.lineEdit_y.setText(str(y))
-                self.ui.lineEdit_y.blockSignals(False)
+                self.update_text_blocking_signals(self.ui.lineEdit_y, str(y))
             except:
-                self.ui.lineEdit_y.blockSignals(True)
-                self.ui.lineEdit_y.setText('#')
-                self.ui.lineEdit_y.blockSignals(False)
+                self.update_text_blocking_signals(self.ui.lineEdit_y, '#')
         elif field == 'y':
             try:
                 y = float(self.ui.lineEdit_y.text())
                 x = self.lin_solver.get_x(y)
-                self.ui.lineEdit_x.blockSignals(True)
-                self.ui.lineEdit_x.setText(str(x))
-                self.ui.lineEdit_x.blockSignals(False)
+                self.update_text_blocking_signals(self.ui.lineEdit_x, str(x))
             except:
-                self.ui.lineEdit_x.blockSignals(True)
-                self.ui.lineEdit_x.setText('#')
-                self.ui.lineEdit_x.blockSignals(False)
+                self.update_text_blocking_signals(self.ui.lineEdit_x, '#')
+    
+    def update_text_blocking_signals(self, ui_obj, text):
+        ui_obj.blockSignals(True)
+        ui_obj.setText(text)
+        ui_obj.blockSignals(False)
+
        
 
 
