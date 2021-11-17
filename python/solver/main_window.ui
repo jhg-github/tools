@@ -110,7 +110,7 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEditY0">
+   <widget class="QLineEdit" name="lineEdit_y0">
     <property name="geometry">
      <rect>
       <x>36</x>
@@ -120,7 +120,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEditY1">
+   <widget class="QLineEdit" name="lineEdit_y1">
     <property name="geometry">
      <rect>
       <x>246</x>
@@ -130,7 +130,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEditX1">
+   <widget class="QLineEdit" name="lineEdit_x1">
     <property name="geometry">
      <rect>
       <x>246</x>
@@ -140,7 +140,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEditX0">
+   <widget class="QLineEdit" name="lineEdit_x0">
     <property name="geometry">
      <rect>
       <x>36</x>
@@ -174,7 +174,7 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEditX1_2">
+   <widget class="QLineEdit" name="lineEdit_n">
     <property name="geometry">
      <rect>
       <x>451</x>
@@ -208,7 +208,7 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEditY1_2">
+   <widget class="QLineEdit" name="lineEdit_m">
     <property name="geometry">
      <rect>
       <x>451</x>
